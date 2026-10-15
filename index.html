@@ -3,89 +3,127 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Amarilla 7 | Análisis Deportivo VIP</title>
+    <title>Amarilla 7 | Análisis Deportivo Avanzado</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+
     <!-- Meta Pixel Code -->
     <script>
     !function(f,b,e,v,n,t,s)
     {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
     n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-    if(!f._fbq)f._fbq=n;n.push=n.ready=!0;n.version='2.0';
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
     n.queue=[];t=b.createElement(e);t.async=!0;
     t.src=v;s=b.getElementsByTagName(e)[0];
     s.parentNode.insertBefore(t,s)}(window, document,'script',
     'https://connect.facebook.net/en_US/fbevents.js');
-    fbq('init', '1487854585605104');
+    fbq('init', '1359300588825829');
     fbq('track', 'PageView');
     </script>
-    <noscript><img height="1" width="1" style="display:none"
-    src="https://www.facebook.com/tr?id=1487854585605104&ev=PageView&noscript=1"
-    /></noscript>
+    <noscript>
+        <img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1359300588825829&ev=PageView&noscript=1"/>
+    </noscript>
     <!-- End Meta Pixel Code -->
+
     <style>
-        body {
+        * {
             margin: 0;
             padding: 0;
-            background-color: #121212;
-            background-image: radial-gradient(circle, #1e1e1e 0%, #0d0d0d 100%);
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            box-sizing: border-box;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        body {
+            background-color: #0b0b0b;
             color: #ffffff;
             display: flex;
             justify-content: center;
             align-items: center;
             min-height: 100vh;
+            padding: 20px;
         }
-        .container {
+
+        .card-container {
+            background: linear-gradient(145deg, #141414, #080808);
+            border: 1px solid #d4af37;
+            border-radius: 20px;
+            padding: 30px 20px;
+            max-width: 450px;
             width: 100%;
-            max-width: 480px;
-            padding: 24px;
-            box-sizing: border-box;
             text-align: center;
+            box-shadow: 0 10px 30px rgba(212, 175, 55, 0.15);
         }
-        .logo-container {
-            margin-bottom: 24px;
+
+        .logo-box {
+            margin-bottom: 20px;
         }
-        .logo-container img {
-            width: 150px;
-            height: 150px;
+
+        .logo-box img {
+            width: 130px;
+            height: 130px;
             border-radius: 50%;
             object-fit: cover;
             border: 3px solid #d4af37;
-            box-shadow: 0 8px 24px rgba(212, 175, 55, 0.35);
+            box-shadow: 0 0 15px rgba(212, 175, 55, 0.3);
         }
+
         h1 {
-            font-size: 24px;
             color: #d4af37;
-            margin-bottom: 12px;
-            font-weight: 700;
-            letter-spacing: 0.5px;
-        }
-        p {
-            font-size: 15px;
-            color: #cccccc;
-            line-height: 1.5;
-            margin-bottom: 32px;
-        }
-        .cta-button {
-            display: block;
-            width: 100%;
-            background: linear-gradient(135deg, #f3e5ab 0%, #d4af37 50%, #aa771c 100%);
-            color: #111111;
-            text-decoration: none;
-            padding: 16px 20px;
-            font-size: 16px;
-            font-weight: 800;
-            border-radius: 12px;
-            box-shadow: 0 6px 20px rgba(212, 175, 55, 0.35);
-            transition: all 0.2s ease;
-            box-sizing: border-box;
+            font-size: 28px;
+            font-weight: 900;
+            letter-spacing: 1.5px;
+            margin-bottom: 15px;
             text-transform: uppercase;
         }
-        .cta-button:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 8px 25px rgba(212, 175, 55, 0.5);
+
+        p.description {
+            color: #cccccc;
+            font-size: 15px;
+            line-height: 1.5;
+            margin-bottom: 25px;
+            font-weight: 500;
         }
-        .footer {
-            margin-top: 40px;
+
+        .urgency-badge {
+            background: rgba(212, 175, 55, 0.1);
+            border: 1px dashed #d4af37;
+            color: #ffd700;
+            padding: 10px 15px;
+            border-radius: 10px;
+            font-size: 13px;
+            font-weight: 700;
+            margin-bottom: 25px;
+            display: block;
+        }
+
+        .btn-telegram {
+            background: linear-gradient(135deg, #ffd700, #d4af37);
+            color: #000000;
+            font-weight: 800;
+            font-size: 16px;
+            padding: 18px 25px;
+            border-radius: 50px;
+            text-decoration: none;
+            display: block;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            box-shadow: 0 4px 20px rgba(212, 175, 55, 0.4);
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            width: 100%;
+        }
+
+        .btn-telegram:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 25px rgba(212, 175, 55, 0.6);
+        }
+
+        .footer-text {
+            margin-top: 25px;
             font-size: 12px;
             color: #666666;
         }
@@ -93,25 +131,47 @@
 </head>
 <body>
 
-    <div class="container">
-        <!-- Logo Oficial Amarilla 7 -->
-        <div class="logo-container">
+    <div class="card-container">
+        <!-- Logo -->
+        <div class="logo-box">
             <img src="1mb github.jpg" alt="Amarilla 7 Logo">
         </div>
 
         <!-- Títulos -->
         <h1>AMARILLA 7</h1>
-        <p>Dominamos las estadísticas de fútbol: faltas, amonestaciones y análisis de alto impacto. Ingresa ahora a la comunidad Amarilla7.</p>
+        
+        <p class="description">
+            Dominamos las estadísticas de fútbol: faltas, amonestaciones y análisis de alto impacto. Ingresa ahora a la comunidad Amarilla 7.
+        </p>
 
-        <!-- Botón con Píxel de Meta integrado -->
-        <a href="https://t.me/+qoy4LSfxLWExNzE5" class="cta-button" onclick="fbq('track', 'Lead');">
-            🟡 Unirme al Canal Gratis de Telegram
+        <span class="urgency-badge">
+            🔥 EVENTO ESPECIAL LISTO PARA ESTE VIERNES Y DOMINGO
+        </span>
+
+        <!-- Botón de Telegram -->
+        <a href="https://t.me/+-9_f3A2v1YQ2ZWRh" onclick="trackLeadAndGo(event, this.href)" class="btn-telegram">
+            UNIRME AL CANAL GRATIS DE TELEGRAM
         </a>
 
-        <div class="footer">
-            © 2026 Amarilla 7. Todos los derechos reservados.
+        <div class="footer-text">
+            © 2026 Amarilla 7 — Análisis Deportivo. Todos los derechos reservados.
         </div>
     </div>
+
+    <!-- Script de rastreo optimizado -->
+    <script>
+    function trackLeadAndGo(event, url) {
+        if (typeof fbq !== 'undefined') {
+            fbq('track', 'Lead');
+        }
+
+        event.preventDefault();
+
+        setTimeout(function() {
+            window.location.href = url;
+        }, 200);
+    }
+    </script>
 
 </body>
 </html>
