@@ -16,25 +16,24 @@
     s.parentNode.insertBefore(t,s)}(window, document,'script',
     'https://connect.facebook.net/en_US/fbevents.js');
     
-    // Tu Pixel activo de Meta Ads
-  <script>
-  function trackSubscribeAndGo(event) {
-    event.preventDefault();
-    var targetUrl = event.currentTarget.getAttribute('href');
-    
-    // Disparar evento de Suscripción activo en Meta Ads
-    if (typeof fbq === 'function') {
-      fbq('track', 'Subscribe');
-    }
-    
-    // Pausa de 400ms para asegurar la señal en celular
-    setTimeout(function() {
-      window.location.href = targetUrl;
-    }, 400);
-  }
-</script>
-  <!-- End Meta Pixel Code -->
+   <!-- Tu Pixel activo de Meta Ads -->
+<script>
+function trackSubscribeAndGo(event) {
+  event.preventDefault();
+  var targetUrl = event.currentTarget.getAttribute('href');
 
+  // Disparar evento de Suscripción activo en Meta Ads
+  if (typeof fbq === 'function') {
+    fbq('track', 'Subscribe');
+  }
+
+  // Pausa de 400ms para asegurar la señal en celular
+  setTimeout(function() {
+    window.location.href = targetUrl;
+  }, 400);
+}
+</script>
+<!-- End Meta Pixel Code -->
   <style>
     * {
       box-sizing: border-box;
