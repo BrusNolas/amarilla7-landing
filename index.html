@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -16,13 +17,13 @@
     s.parentNode.insertBefore(t,s)}(window, document,'script',
     'https://connect.facebook.net/en_US/fbevents.js');
     
-    // Tu Pixel real de Meta Ads
+    // Tu Pixel activo de Meta Ads
     fbq('init', '1487854585605104');
     fbq('track', 'PageView');
   </script>
   <noscript>
     <img height="1" width="1" style="display:none"
-         src="https://www.facebook.com/tr?id=1487854585605104&ev=PageView&noscript=1"/>
+         src="https://www.facebook.com/tr?id=1487854585605104&ev=Subscribe&noscript=1"/>
   </noscript>
   <!-- End Meta Pixel Code -->
 
@@ -96,22 +97,22 @@
     <h1>AMARILLA 7</h1>
     <p>Accede de inmediato a nuestro canal VIP exclusivo en Telegram para recibir análisis de alto nivel y pronósticos calientes.</p>
     
-    <a href="https://t.me/+xNmTvaBo92U2MGMx" class="btn-telegram" onclick="trackLeadAndGo(event)">
+    <a href="https://t.me/+xNmTvaBo92U2MGMx" class="btn-telegram" onclick="trackSubscribeAndGo(event)">
       👉 UNIRME AL CANAL AHORA
     </a>
   </div>
 
   <script>
-    function trackLeadAndGo(event) {
+    function trackSubscribeAndGo(event) {
       event.preventDefault();
       var targetUrl = event.currentTarget.getAttribute('href');
       
-      // Registrar evento Lead
+      // Registrar evento Subscribe (Suscripción en el sitio web)
       if (typeof fbq === 'function') {
-        fbq('track', 'Lead');
+        fbq('track', 'Subscribe');
       }
       
-      // Pausa optimizada para móviles antes de redirigir
+      // Pausa optimizada para móviles (450ms) antes de redirigir
       setTimeout(function() {
         window.location.href = targetUrl;
       }, 450);
