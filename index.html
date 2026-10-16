@@ -16,24 +16,34 @@
     s.parentNode.insertBefore(t,s)}(window, document,'script',
     'https://connect.facebook.net/en_US/fbevents.js');
     
-   <!-- Tu Pixel activo de Meta Ads -->
-<script>
-function trackSubscribeAndGo(event) {
-  event.preventDefault();
-  var targetUrl = event.currentTarget.getAttribute('href');
+    // Pixel ID Activo y PageView
+    fbq('init', '1487854585605104');
+    fbq('track', 'PageView');
+  </script>
+  <noscript>
+    <img height="1" width="1" style="display:none"
+         src="https://www.facebook.com/tr?id=1487854585605104&ev=PageView&noscript=1"/>
+  </noscript>
+  <!-- End Meta Pixel Code -->
 
-  // Disparar evento de Suscripción activo en Meta Ads
-  if (typeof fbq === 'function') {
-    fbq('track', 'Subscribe');
-  }
+  <!-- Script de Conversión para el Botón (Evento Subscribe) -->
+  <script>
+    function trackSubscribeAndGo(event) {
+      event.preventDefault();
+      var targetUrl = event.currentTarget.getAttribute('href');
+      
+      // Disparar evento Subscribe para Meta Ads
+      if (typeof fbq === 'function') {
+        fbq('track', 'Subscribe');
+      }
+      
+      // Pausa de 400ms optimizada para celulares antes de redirigir a Telegram
+      setTimeout(function() {
+        window.location.href = targetUrl;
+      }, 400);
+    }
+  </script>
 
-  // Pausa de 400ms para asegurar la señal en celular
-  setTimeout(function() {
-    window.location.href = targetUrl;
-  }, 400);
-}
-</script>
-<!-- End Meta Pixel Code -->
   <style>
     * {
       box-sizing: border-box;
@@ -63,14 +73,25 @@ function trackSubscribeAndGo(event) {
       align-items: center;
     }
 
-    /* ESCUDO LOGO DORADO */
-    .logo-img {
-      width: 140px;
-      height: 140px;
-      object-fit: contain;
+    .logo-container {
+      width: 130px;
+      height: 130px;
       border-radius: 50%;
+      background: radial-gradient(circle, #2a2208 0%, #121212 70%);
+      border: 2px solid #f5cf47;
+      display: flex;
+      justify-content: center;
+      align-items: center;
       margin-bottom: 24px;
-      box-shadow: 0 0 25px rgba(255, 215, 0, 0.25);
+      box-shadow: 0 0 30px rgba(245, 207, 71, 0.3);
+      position: relative;
+    }
+
+    .logo-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 50%;
     }
 
     h1 {
@@ -126,8 +147,9 @@ function trackSubscribeAndGo(event) {
 <body>
 
   <div class="container">
-    <!-- LOGO DORADO CIRCULAR -->
-    <img src="logo.png" alt="Amarilla 7 Logo" class="logo-img">
+    <div class="logo-container">
+      <img src="logo.png" alt="Amarilla 7" class="logo-img" onerror="this.style.display='none'; this.parentElement.innerHTML='<span style=\'color:#f5cf47;font-size:48px;font-weight:900;\'>7</span>'">
+    </div>
 
     <h1>AMARILLA 7</h1>
     
@@ -141,23 +163,6 @@ function trackSubscribeAndGo(event) {
       © 2026 Amarilla 7. Todos los derechos reservados.
     </div>
   </div>
-
-  <script>
-    function trackSubscribeAndGo(event) {
-      event.preventDefault();
-      var targetUrl = event.currentTarget.getAttribute('href');
-      
-      // Registrar evento Subscribe (Suscripción en el sitio web)
-      if (typeof fbq === 'function') {
-        fbq('track', 'Subscribe');
-      }
-      
-      // Pausa optimizada para móviles antes de redirigir
-      setTimeout(function() {
-        window.location.href = targetUrl;
-      }, 400);
-    }
-  </script>
 
 </body>
 </html>
