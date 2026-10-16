@@ -17,13 +17,22 @@
     'https://connect.facebook.net/en_US/fbevents.js');
     
     // Tu Pixel activo de Meta Ads
-    fbq('init', '1487854585605104');
-    fbq('track', 'PageView');
-  </script>
-  <noscript>
-    <img height="1" width="1" style="display:none"
-         src="https://www.facebook.com/tr?id=1487854585605104&ev=Subscribe&noscript=1"/>
-  </noscript>
+  <script>
+  function trackSubscribeAndGo(event) {
+    event.preventDefault();
+    var targetUrl = event.currentTarget.getAttribute('href');
+    
+    // Disparar evento de Suscripción activo en Meta Ads
+    if (typeof fbq === 'function') {
+      fbq('track', 'Subscribe');
+    }
+    
+    // Pausa de 400ms para asegurar la señal en celular
+    setTimeout(function() {
+      window.location.href = targetUrl;
+    }, 400);
+  }
+</script>
   <!-- End Meta Pixel Code -->
 
   <style>
